@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+FDMD5.h"
+#import <sqlite3.h>
 
 
 /**
@@ -16,11 +18,8 @@
 
 /**
  数据库目录
- 
- @return 数据库目录
  */
-+ (NSString *)databasePath;
-
+@property (nonatomic, strong) NSString *databasePath;
 
 /**
  查询数据库

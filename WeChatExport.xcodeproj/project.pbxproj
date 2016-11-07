@@ -18,6 +18,7 @@
 		447B1B061DD0B70F00385375 /* NSString+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B051DD0B70F00385375 /* NSString+FDMD5.m */; };
 		447B1B0C1DD0B7B300385375 /* NSData+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */; };
 		447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0E1DD0B99400385375 /* FDDataReader.m */; };
+		447B1B121DD0E5E900385375 /* FDMMReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B111DD0E5E900385375 /* FDMMReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,8 @@
 		447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FDMD5.m"; sourceTree = "<group>"; };
 		447B1B0D1DD0B99400385375 /* FDDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDDataReader.h; sourceTree = "<group>"; };
 		447B1B0E1DD0B99400385375 /* FDDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDDataReader.m; sourceTree = "<group>"; };
+		447B1B101DD0E5E900385375 /* FDMMReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDMMReader.h; sourceTree = "<group>"; };
+		447B1B111DD0E5E900385375 /* FDMMReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDMMReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +172,8 @@
 				447B1B0E1DD0B99400385375 /* FDDataReader.m */,
 				447B1AFF1DD0B6B400385375 /* FDManifestReader.h */,
 				447B1B001DD0B6B400385375 /* FDManifestReader.m */,
+				447B1B101DD0E5E900385375 /* FDMMReader.h */,
+				447B1B111DD0E5E900385375 /* FDMMReader.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -314,6 +319,7 @@
 				4472DB271DCF179300E479CE /* AppDelegate.m in Sources */,
 				447B1B061DD0B70F00385375 /* NSString+FDMD5.m in Sources */,
 				447B1B0C1DD0B7B300385375 /* NSData+FDMD5.m in Sources */,
+				447B1B121DD0E5E900385375 /* FDMMReader.m in Sources */,
 				447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

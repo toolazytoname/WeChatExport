@@ -8,7 +8,8 @@
 
 #import "ViewController.h"
 #import "FDManifestReader.h"
-#import "NSString+FDMD5.h"
+#import "FDMMReader.h"
+
 
 @implementation ViewController
 
@@ -16,6 +17,10 @@
     [super viewDidLoad];    
     FDManifestReader *manifestReader = [[FDManifestReader alloc] init];
     [manifestReader QueryFiles];
+    
+    FDMMReader *mmReader = [[FDMMReader alloc] init];
+    mmReader.databasePath = manifestReader.MMDotSqlitePath;
+    [mmReader query];
 }
 
 

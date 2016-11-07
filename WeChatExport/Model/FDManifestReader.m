@@ -7,17 +7,20 @@
 //
 
 #import "FDManifestReader.h"
-#import "NSString+FDMD5.h"
-#import <sqlite3.h>
 
+@interface FDManifestReader()
+
+@property (nonatomic, strong) NSString *MMDotSqlitePath;
+
+@end
 
 @implementation FDManifestReader
 
-+ (NSString *)databasePath {
-    return [[[self class] backupFolderPath] stringByAppendingPathComponent:@"Manifest.db"];
+- (NSString *)databasePath {
+    return [[self backupFolderPath] stringByAppendingPathComponent:@"Manifest.db"];
 }
 
-+ (NSString *)backupFolderPath {
+- (NSString *)backupFolderPath {
     return @"/Users/weichao/Library/Application\ Support/MobileSync/Backup/7c944decd417833ed3954f4cc32c0f0e0cf9c14a";
 }
 
@@ -56,12 +59,16 @@
             NSString *relativePath = [element valueForKey:@"1"];
             
             fileID = [[fileID substringWithRange:NSMakeRange(0, 2)] stringByAppendingPathComponent:fileID];
-            NSString *absolutePath = [[[self class] backupFolderPath] stringByAppendingPathComponent:fileID];
+            NSString *absolutePath = [[self backupFolderPath] stringByAppendingPathComponent:fileID];
 
             //寻找当前ID的相关文件
             if ([self isFileMatchID:[self myIDString] relativePath:relativePath] ) {
                 NSArray *myIDElement = @[absolutePath,relativePath];
                 [myIDDocumentFiles addObject:myIDElement];
+            }
+            
+            if([self isMMDotsqliteWithRelativePath:relativePath]) {
+                self.MMDotSqlitePath = absolutePath;
             }
         }
     }];
@@ -74,6 +81,13 @@
     NSString *IDAfterMD5 = [ID fd_md5Hash];
     NSString *currentIDDocuments = [@"Documents" stringByAppendingPathComponent:IDAfterMD5];
     if ([relativePath containsString:currentIDDocuments]) {
+        return YES;
+    }
+    return NO;
+}
+
+- (BOOL)isMMDotsqliteWithRelativePath:(NSString *)relativePath {
+    if ([relativePath hasSuffix:@"/MM.sqlite"]) {
         return YES;
     }
     return NO;

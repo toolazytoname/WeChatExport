@@ -7,7 +7,6 @@
 //
 
 #import "FDDataReader.h"
-#import <sqlite3.h>
 
 static sqlite3 *database = NULL;
 
@@ -29,19 +28,15 @@ static sqlite3 *database = NULL;
     return result;
 }
 
-+ (NSString *)databasePath {
-    return @"";
-}
-
 - (BOOL)isExistsDatabase{
-    NSString *databasePath = [[self class] databasePath];
+    NSString *databasePath = [self databasePath];
     NSFileManager *fileManager = [NSFileManager defaultManager];
     bool isExist = [fileManager fileExistsAtPath:databasePath];
     return isExist;
 }
 
 - (void)openDatabase {
-    NSString *databasePath = [[self class] databasePath];
+    NSString *databasePath = [self databasePath];
     // 是否打开成功
     if (sqlite3_open([databasePath UTF8String], &database) == SQLITE_OK) {
         NSLog(@"Opening Database");

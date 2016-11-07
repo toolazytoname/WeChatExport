@@ -13,6 +13,7 @@
  Manifest.db文件读取类
  */
 @interface FDManifestReader : FDDataReader
+@property (nonatomic, strong, readonly) NSString *MMDotSqlitePath;
 
 
 /**
@@ -21,4 +22,6 @@
  @return 结果
  */
 - (NSMutableArray *)QueryFiles;
+
+
 @end
