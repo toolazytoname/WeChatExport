@@ -14,10 +14,10 @@
 		4472DB321DCF179400E479CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4472DB301DCF179400E479CE /* Main.storyboard */; };
 		4472DB3D1DCF179400E479CE /* WeChatExportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB3C1DCF179400E479CE /* WeChatExportTests.m */; };
 		4472DB481DCF179400E479CE /* WeChatExportUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB471DCF179400E479CE /* WeChatExportUITests.m */; };
-		4472DB571DCF17F800E479CE /* FDManifestReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB561DCF17F800E479CE /* FDManifestReader.m */; };
-		4472DB5A1DCF2C4300E479CE /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB591DCF2C4300E479CE /* NSDataAdditions.m */; };
-		4472DB5F1DCF2C6500E479CE /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB5C1DCF2C6500E479CE /* NSDataAdditions.m */; };
-		4472DB601DCF2C6500E479CE /* NSStringExtend.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB5E1DCF2C6500E479CE /* NSStringExtend.m */; };
+		447B1B031DD0B6B400385375 /* FDManifestReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B001DD0B6B400385375 /* FDManifestReader.m */; };
+		447B1B061DD0B70F00385375 /* NSString+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B051DD0B70F00385375 /* NSString+FDMD5.m */; };
+		447B1B0C1DD0B7B300385375 /* NSData+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */; };
+		447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0E1DD0B99400385375 /* FDDataReader.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,14 +53,14 @@
 		4472DB431DCF179400E479CE /* WeChatExportUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeChatExportUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472DB471DCF179400E479CE /* WeChatExportUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeChatExportUITests.m; sourceTree = "<group>"; };
 		4472DB491DCF179400E479CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4472DB551DCF17F800E479CE /* FDManifestReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDManifestReader.h; sourceTree = "<group>"; };
-		4472DB561DCF17F800E479CE /* FDManifestReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDManifestReader.m; sourceTree = "<group>"; };
-		4472DB581DCF2C4300E479CE /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		4472DB591DCF2C4300E479CE /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		4472DB5B1DCF2C6500E479CE /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		4472DB5C1DCF2C6500E479CE /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		4472DB5D1DCF2C6500E479CE /* NSStringExtend.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringExtend.h; sourceTree = "<group>"; };
-		4472DB5E1DCF2C6500E479CE /* NSStringExtend.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringExtend.m; sourceTree = "<group>"; };
+		447B1AFF1DD0B6B400385375 /* FDManifestReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDManifestReader.h; sourceTree = "<group>"; };
+		447B1B001DD0B6B400385375 /* FDManifestReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDManifestReader.m; sourceTree = "<group>"; };
+		447B1B041DD0B70F00385375 /* NSString+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FDMD5.h"; sourceTree = "<group>"; };
+		447B1B051DD0B70F00385375 /* NSString+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FDMD5.m"; sourceTree = "<group>"; };
+		447B1B0A1DD0B7B300385375 /* NSData+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FDMD5.h"; sourceTree = "<group>"; };
+		447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FDMD5.m"; sourceTree = "<group>"; };
+		447B1B0D1DD0B99400385375 /* FDDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDDataReader.h; sourceTree = "<group>"; };
+		447B1B0E1DD0B99400385375 /* FDDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDDataReader.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,18 +111,12 @@
 		4472DB241DCF179300E479CE /* WeChatExport */ = {
 			isa = PBXGroup;
 			children = (
-				4472DB5B1DCF2C6500E479CE /* NSDataAdditions.h */,
-				4472DB5C1DCF2C6500E479CE /* NSDataAdditions.m */,
-				4472DB5D1DCF2C6500E479CE /* NSStringExtend.h */,
-				4472DB5E1DCF2C6500E479CE /* NSStringExtend.m */,
+				447B1AF91DD0B6B400385375 /* md5 */,
+				447B1AFE1DD0B6B400385375 /* Model */,
 				4472DB251DCF179300E479CE /* AppDelegate.h */,
 				4472DB261DCF179300E479CE /* AppDelegate.m */,
-				4472DB551DCF17F800E479CE /* FDManifestReader.h */,
-				4472DB561DCF17F800E479CE /* FDManifestReader.m */,
 				4472DB2B1DCF179300E479CE /* ViewController.h */,
 				4472DB2C1DCF179300E479CE /* ViewController.m */,
-				4472DB581DCF2C4300E479CE /* NSDataAdditions.h */,
-				4472DB591DCF2C4300E479CE /* NSDataAdditions.m */,
 				4472DB2E1DCF179300E479CE /* Assets.xcassets */,
 				4472DB301DCF179400E479CE /* Main.storyboard */,
 				4472DB331DCF179400E479CE /* Info.plist */,
@@ -155,6 +149,28 @@
 				4472DB491DCF179400E479CE /* Info.plist */,
 			);
 			path = WeChatExportUITests;
+			sourceTree = "<group>";
+		};
+		447B1AF91DD0B6B400385375 /* md5 */ = {
+			isa = PBXGroup;
+			children = (
+				447B1B0A1DD0B7B300385375 /* NSData+FDMD5.h */,
+				447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */,
+				447B1B041DD0B70F00385375 /* NSString+FDMD5.h */,
+				447B1B051DD0B70F00385375 /* NSString+FDMD5.m */,
+			);
+			path = md5;
+			sourceTree = "<group>";
+		};
+		447B1AFE1DD0B6B400385375 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				447B1B0D1DD0B99400385375 /* FDDataReader.h */,
+				447B1B0E1DD0B99400385375 /* FDDataReader.m */,
+				447B1AFF1DD0B6B400385375 /* FDManifestReader.h */,
+				447B1B001DD0B6B400385375 /* FDManifestReader.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,13 +308,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4472DB5F1DCF2C6500E479CE /* NSDataAdditions.m in Sources */,
 				4472DB2D1DCF179300E479CE /* ViewController.m in Sources */,
-				4472DB5A1DCF2C4300E479CE /* NSDataAdditions.m in Sources */,
-				4472DB571DCF17F800E479CE /* FDManifestReader.m in Sources */,
 				4472DB2A1DCF179300E479CE /* main.m in Sources */,
-				4472DB601DCF2C6500E479CE /* NSStringExtend.m in Sources */,
+				447B1B031DD0B6B400385375 /* FDManifestReader.m in Sources */,
 				4472DB271DCF179300E479CE /* AppDelegate.m in Sources */,
+				447B1B061DD0B70F00385375 /* NSString+FDMD5.m in Sources */,
+				447B1B0C1DD0B7B300385375 /* NSData+FDMD5.m in Sources */,
+				447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -533,6 +549,7 @@
 				4472DB4E1DCF179400E479CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4472DB4F1DCF179400E479CE /* Build configuration list for PBXNativeTarget "WeChatExportTests" */ = {
 			isa = XCConfigurationList;
@@ -541,6 +558,7 @@
 				4472DB511DCF179400E479CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4472DB521DCF179400E479CE /* Build configuration list for PBXNativeTarget "WeChatExportUITests" */ = {
 			isa = XCConfigurationList;
@@ -549,6 +567,7 @@
 				4472DB541DCF179400E479CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
