@@ -10,6 +10,7 @@
 
 @interface FDMMReader : FDDataReader
 
+
 - (NSMutableArray *)query;
 
 @end

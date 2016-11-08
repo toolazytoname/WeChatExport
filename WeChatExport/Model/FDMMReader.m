@@ -57,14 +57,14 @@
                     [chatLog appendString:message];
                     break;
                 case 3:
-                    [chatLog appendFormat:@"the imagePath is %@",[self imagePath:mesLocalID]];
+                    [chatLog appendFormat:@"the imagePath is %@",[self realPathByRelativePath: [self imagePath:mesLocalID]]];
                     break;
                 case 43:
                 case 62:
-                    [chatLog appendFormat:@"the videoPath is %@",[self littleVideoPath:mesLocalID]];
+                    [chatLog appendFormat:@"the videoPath is %@",[self realPathByRelativePath: [self littleVideoPath:mesLocalID]]];
                     break;
                 case 34:
-                    [chatLog appendFormat:@"the audio path is %@",[self audioPath:mesLocalID]];
+                    [chatLog appendFormat:@"the audio path is %@",[self realPathByRelativePath: [self audioPath:mesLocalID]]];
                     break;
                 case 49://分享链接
                 case 48:
@@ -104,14 +104,14 @@
 - (NSString *)tableName {
     //    NSString *tableName = [@"Chat_" stringByAppendingString:[friendID fd_md5Hash]];
     //    return tableName;
-    return @"Chat_b069ed0823fc2d57d25d37da69434ab1";
+    return @"Chat_";
 
 }
 
 - (NSString *)encodedName {
 //    NSString *tableName = [@"Chat_" stringByAppendingString:[friendID fd_md5Hash]];
 //    return tableName;
-    return @"b069ed0823fc2d57d25d37da69434ab1";
+    return @"";
 }
 
 /**
@@ -133,7 +133,7 @@ Friend表的ShortPY字段存储了有好友的备注信息，但是编码不一�
  @return 图片路径
  */
 - (NSString *)imagePath:(NSInteger)mesLocalID {
-    NSString *imagePath = [NSString stringWithFormat:@"root\\Img\\%@\\%ld.pic",[self encodedName],mesLocalID];
+    NSString *imagePath = [NSString stringWithFormat:@"Img/%@/%ld.pic",[self encodedName],mesLocalID];
     return imagePath;
 }
 
@@ -143,9 +143,8 @@ Friend表的ShortPY字段存储了有好友的备注信息，但是编码不一�
  @return 视频路径
  */
 - (NSString *)littleVideoPath:(NSInteger)mesLocalID {
-    NSString *videoPath = [NSString stringWithFormat:@"root\\Video\\%@\\%ld.mp4",[self encodedName],mesLocalID];
+    NSString *videoPath = [NSString stringWithFormat:@"Video/%@/%ld.mp4",[self encodedName],mesLocalID];
     return videoPath;
-
 }
 
 
@@ -161,7 +160,7 @@ Friend表的ShortPY字段存储了有好友的备注信息，但是编码不一�
  @return 语音路径
  */
 - (NSString *)audioPath:(NSInteger)mesLocalID {
-    NSString *audioPath = [NSString stringWithFormat:@"root\\Audio\\%@\\%ld.aud",[self encodedName],mesLocalID];
+    NSString *audioPath = [NSString stringWithFormat:@"Audio/%@/%ld.aud",[self encodedName],mesLocalID];
     return audioPath;
 }
 
@@ -175,4 +174,26 @@ Friend表的ShortPY字段存储了有好友的备注信息，但是编码不一�
 //在好友的聊天记录表中，假设为 Chat_ a500325c723649ddb75eda10635edf82 表，若字段Type为42，则该信息是一个名片，在该信息的XML结构里：msg –> username 字段中存储着微信ID，msg –> nickname 字段中存储着微信名。
 
 //在好友的聊天记录表中，假设为 Chat_ a500325c723649ddb75eda10635edf82 表，若字段Type为50，则该信息是一个电话记录。里面有时长信息：<duration></duration>
+
+
+- (NSString *)realPathByRelativePath:(NSString *)relativePath {
+    NSString *idPath = [self myIDDocumentFileSaveToPath];
+    NSArray *idArray = [[NSArray alloc] initWithContentsOfFile:idPath];
+    __block NSString *result;
+    [idArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSArray *elementArray = (NSArray *)obj;
+        NSString *relativeFromFile = (NSString *)elementArray[1];
+        if ([relativeFromFile hasSuffix:relativePath]) {
+            result = elementArray[0];
+            *stop = YES;
+        }
+    }];
+    return result;
+}
+
+- (NSString *)myIDDocumentFileSaveToPath {
+    NSString *pathOfResult = @"/Users/weichao/Desktop/wechat/myIDDocument";
+    return pathOfResult;
+}
+
 @end
