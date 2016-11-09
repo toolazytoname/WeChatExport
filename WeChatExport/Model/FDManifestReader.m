@@ -14,11 +14,12 @@
 
 @implementation FDManifestReader
 
-- (NSMutableArray *)QueryFiles {
-    NSMutableArray *filesArray = [self publicQueryDataWithsql:FDGetWeChatFileIDAndrelativePathSQL dataColumns:@[@(0),@(1)]];
-    [self enumerateFilesArray:filesArray];
-    [filesArray writeToFile:[FDWeChatConfig wechatSandBoxFilesArrayFilePath] atomically:YES];
-    return filesArray;
+- (void)query {
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSMutableArray *filesArray = [self publicQueryDataWithsql:FDGetWeChatFileIDAndrelativePathSQL dataColumns:@[@(0),@(1)]];
+        [self enumerateFilesArray:filesArray];
+        [filesArray writeToFile:[FDWeChatConfig wechatSandBoxFilesArrayFilePath] atomically:YES];
+    });
 }
 
 - (void)enumerateFilesArray:(NSArray *)filesArray {

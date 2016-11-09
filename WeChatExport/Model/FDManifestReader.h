@@ -18,10 +18,8 @@
 
 /**
  从数据库获取数据，在一次遍历过程中把所有需要的数据都取出来
-
- @return 结果
  */
-- (NSMutableArray *)QueryFiles;
+- (void)query;
 
 
 @end

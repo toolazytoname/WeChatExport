@@ -17,7 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];    
     FDManifestReader *manifestReader = [[FDManifestReader alloc] init];
-    [manifestReader QueryFiles];
+    [manifestReader query];
     
     FDMMReader *mmReader = [[FDMMReader alloc] init];
     mmReader.databasePath = manifestReader.MMDotSqlitePath;
