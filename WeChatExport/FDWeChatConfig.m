@@ -1,0 +1,60 @@
+//
+//  FDWeChatConfig.m
+//  WeChatExport
+//
+//  Created by weichao on 2016/11/9.
+//  Copyright © 2016年 FatGragon. All rights reserved.
+//
+
+#import "FDWeChatConfig.h"
+#import "NSString+FDMD5.h"
+
+NSString *const FDDestinationFolderPath = @"/Users/weichao/Desktop/wechat";
+NSString *const FDManifestDataBaseName = @"Manifest.db";
+NSString *const FDMMDataBaseName = @"MM.sqlite";
+NSString *const FDMacBackupFolderPath = @"/Users/weichao/Library/Application Support/MobileSync/Backup/7c944decd417833ed3954f4cc32c0f0e0cf9c14a";
+NSString *const FDHostWeChatID = @"shuitaiyang747";
+NSString *const FDGetWeChatFileIDAndrelativePathSQL = @"SELECT fileID,relativePath FROM Files WHERE domain='AppDomain-com.tencent.xin'";
+
+@implementation FDWeChatConfig
+
++ (NSString *)manifestPath {
+    NSString *manifestPath = [FDMacBackupFolderPath stringByAppendingPathComponent:FDManifestDataBaseName];
+    return manifestPath;
+}
+
++ (NSString *)wechatSandBoxFilesArrayFilePath {
+    NSString *fileName = @"WechatSandBoxFilesArray";
+    NSString *path = [FDDestinationFolderPath stringByAppendingPathComponent:fileName];
+    return path;
+}
+
++ (NSString *)hostWeChatFilesArrayFilePath {
+    NSString *fileName = [FDHostWeChatID stringByAppendingString:@"FilesArray"];
+    NSString *path = [FDDestinationFolderPath stringByAppendingPathComponent:fileName];
+    return path;
+}
+
++ (NSString *)hostWeChatIDAfterMD5 {
+    NSString *hostWeChatIDAfterMD5 = [FDHostWeChatID fd_md5Hash];
+    return hostWeChatIDAfterMD5;
+}
+
++ (BOOL)isPathMatchHostWeChatIDWithPath:(NSString *)relativePath; {
+    NSString *hostWeChatIDAfterMD5 = [[self class] hostWeChatIDAfterMD5];
+    NSString *currentIDDocuments = [@"Documents" stringByAppendingPathComponent:hostWeChatIDAfterMD5];
+    if ([relativePath containsString:currentIDDocuments]) {
+        return YES;
+    }
+    return NO;
+}
+
++ (BOOL)isMMDotsqliteWithRelativePath:(NSString *)relativePath {
+    if ([relativePath hasSuffix:FDMMDataBaseName]) {
+        return YES;
+    }
+    return NO;
+}
+
+
+@end

@@ -9,45 +9,17 @@
 #import "FDManifestReader.h"
 
 @interface FDManifestReader()
-
 @property (nonatomic, strong) NSString *MMDotSqlitePath;
-
 @end
 
 @implementation FDManifestReader
 
-- (NSString *)databasePath {
-    return [[self backupFolderPath] stringByAppendingPathComponent:@"Manifest.db"];
-}
-
-- (NSString *)backupFolderPath {
-    return @"/Users/weichao/Library/Application\ Support/MobileSync/Backup/7c944decd417833ed3954f4cc32c0f0e0cf9c14a";
-}
-
-- (NSString *)myIDString {
-    NSString *myID = @"shuitaiyang747";
-    return myID;
-}
-
-- (NSString *)myIDDocumentFileSaveToPath {
-    NSString *pathOfResult = @"/Users/weichao/Desktop/wechat/myIDDocument";
-    return pathOfResult;
-}
-
-- (NSString *)wechatFileSaveToPath {
-    NSString *pathOfResult = @"/Users/weichao/Desktop/wechat/wechat";
-    return pathOfResult;
-}
-
-
 - (NSMutableArray *)QueryFiles {
-    NSString *sql = @"SELECT fileID,relativePath FROM Files WHERE domain='AppDomain-com.tencent.xin'";
-    NSMutableArray *filesArray = [self publicQueryDataWithsql:sql dataColumns:@[@(0),@(1)]];
-    [filesArray writeToFile:[self wechatFileSaveToPath] atomically:YES];
+    NSMutableArray *filesArray = [self publicQueryDataWithsql:FDGetWeChatFileIDAndrelativePathSQL dataColumns:@[@(0),@(1)]];
     [self enumerateFilesArray:filesArray];
+    [filesArray writeToFile:[FDWeChatConfig wechatSandBoxFilesArrayFilePath] atomically:YES];
     return filesArray;
 }
-
 
 - (void)enumerateFilesArray:(NSArray *)filesArray {
     //当前ID的目录数据
@@ -59,38 +31,21 @@
             NSString *relativePath = [element valueForKey:@"1"];
             
             fileID = [[fileID substringWithRange:NSMakeRange(0, 2)] stringByAppendingPathComponent:fileID];
-            NSString *absolutePath = [[self backupFolderPath] stringByAppendingPathComponent:fileID];
+            NSString *absolutePath = [FDMacBackupFolderPath stringByAppendingPathComponent:fileID];
 
             //寻找当前ID的相关文件
-            if ([self isFileMatchID:[self myIDString] relativePath:relativePath] ) {
+            if ([FDWeChatConfig isPathMatchHostWeChatIDWithPath:relativePath]) {
                 NSArray *myIDElement = @[absolutePath,relativePath];
                 [myIDDocumentFiles addObject:myIDElement];
             }
             
-            if([self isMMDotsqliteWithRelativePath:relativePath]) {
+            if([FDWeChatConfig isMMDotsqliteWithRelativePath:relativePath]) {
                 self.MMDotSqlitePath = absolutePath;
             }
         }
     }];
-    [myIDDocumentFiles writeToFile:[self myIDDocumentFileSaveToPath] atomically:YES];
-    NSLog(@"md5:%@;wechatFilesCount:%ld;myIDDocumentFilesCount:%ld",[[self myIDString] fd_md5Hash],filesArray.count,myIDDocumentFiles.count);
-
-}
-
-- (BOOL)isFileMatchID:(NSString *)ID relativePath:(NSString *)relativePath {
-    NSString *IDAfterMD5 = [ID fd_md5Hash];
-    NSString *currentIDDocuments = [@"Documents" stringByAppendingPathComponent:IDAfterMD5];
-    if ([relativePath containsString:currentIDDocuments]) {
-        return YES;
-    }
-    return NO;
-}
-
-- (BOOL)isMMDotsqliteWithRelativePath:(NSString *)relativePath {
-    if ([relativePath hasSuffix:@"/MM.sqlite"]) {
-        return YES;
-    }
-    return NO;
+    [myIDDocumentFiles writeToFile:[FDWeChatConfig  hostWeChatFilesArrayFilePath] atomically:YES];
+    NSLog(@"md5:%@;wechatFilesCount:%ld;myIDDocumentFilesCount:%ld",[FDWeChatConfig hostWeChatIDAfterMD5],filesArray.count,myIDDocumentFiles.count);
 }
 
 

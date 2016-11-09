@@ -7,12 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "NSString+FDMD5.h"
 #import <sqlite3.h>
-
+#import "FDWeChatConfig.h"
 
 /**
- 一个库文件，对应一个类，一共通用的公共方法都在这个基类中
+ 一个库文件，对应一个类，一些通用的公共方法都在这个基类中
  */
 @interface FDDataReader : NSObject
 

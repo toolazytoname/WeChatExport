@@ -25,7 +25,6 @@
 }
 
 - (NSMutableArray *)query {
-    NSString *friendID = [self friendID];
     NSString *tableName = [self tableName];
 //   CreateTime UTC+0
     NSString *sql = [NSString stringWithFormat:@"SELECT CreateTime,Message,Type,Des,MesLocalID FROM %@",tableName];
@@ -195,5 +194,7 @@ Friend表的ShortPY字段存储了有好友的备注信息，但是编码不一�
     NSString *pathOfResult = @"/Users/weichao/Desktop/wechat/myIDDocument";
     return pathOfResult;
 }
+
+
 
 @end
