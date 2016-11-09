@@ -10,7 +10,6 @@
 
 @interface FDMMReader : FDDataReader
 
-
+@property (nonatomic, copy) NSString *friendID;
 - (NSMutableArray *)query;
-
 @end

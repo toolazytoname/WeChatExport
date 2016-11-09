@@ -10,6 +10,6 @@
 
 @interface FDFileManager : NSObject
 
-+ (BOOL)copyFileFrom:(NSString *)sourcepath destination:(NSString *)destinationPath;
++ (BOOL)copyFileFrom:(NSString *)sourcepath destination:(NSString *)destinationPath iSCreate:(BOOL)iSCreate;
 
 @end

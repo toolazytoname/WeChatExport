@@ -56,5 +56,30 @@ NSString *const FDGetWeChatFileIDAndrelativePathSQL = @"SELECT fileID,relativePa
     return NO;
 }
 
++ (NSString *)friendTableNameWithFriendID:(NSString *)friendID {
+    NSString *friendIDAfterMD5 = [friendID fd_md5Hash];
+    NSString *tableName = [@"Chat_" stringByAppendingString:friendIDAfterMD5];
+    return tableName;
+}
 
++ (NSString *)friendChatLogPathWithFriendID:(NSString *)friendID {
+    NSString *path = [FDDestinationFolderPath stringByAppendingPathComponent:friendID];
+    return path;
+}
+
++ (NSString *)friendSQLResultPathWithFriendID:(NSString *)friendID {
+    NSString *path = [[FDDestinationFolderPath stringByAppendingPathComponent:friendID] stringByAppendingString:@"SQLResult"];
+    return path;
+}
+
++ (NSString *)friendSQLWithFriendID:(NSString *)friendID {
+    NSString *tableName = [[self class] friendTableNameWithFriendID:friendID];
+    NSString *sql = [NSString stringWithFormat:@"SELECT CreateTime,Message,Type,Des,MesLocalID FROM %@",tableName];
+    return sql;
+}
+
++ (NSString *)friendIDAfterMD5:(NSString *)friendID {
+    NSString *friendIDAfterMD5 = [friendID fd_md5Hash];
+    return friendIDAfterMD5;
+}
 @end

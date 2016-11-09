@@ -78,4 +78,48 @@ extern NSString *const FDGetWeChatFileIDAndrelativePathSQL;
  */
 + (BOOL)isMMDotsqliteWithRelativePath:(NSString *)relativePath;
 
+
+/**
+ 根据朋友ID返回表名
+
+ @param friendID 朋友明文ID
+ @return 对应的聊天记录表名
+ */
++ (NSString *)friendTableNameWithFriendID:(NSString *)friendID;
+
+/**
+ 返回聊天记录结果文件
+
+ @param friendID 朋友明文ID
+ @return 朋友聊天记录导出的路径
+ */
++ (NSString *)friendChatLogPathWithFriendID:(NSString *)friendID;
+
+
+/**
+ 某个朋友消息表的sql查询结果路径
+
+ @param friendID 朋友明文ID
+ @return 某个朋友消息表的sql查询结果路径
+ */
++ (NSString *)friendSQLResultPathWithFriendID:(NSString *)friendID;
+
+
+/**
+ 某个朋友消息表的查询SQL
+
+ @param friendID 朋友明文ID
+ @return SQL语句
+ */
++ (NSString *)friendSQLWithFriendID:(NSString *)friendID;
+
+
+/**
+ 哈希后的朋友ID
+
+ @param friendID 朋友明文ID
+ @return 哈希后的朋友ID
+ */
++ (NSString *)friendIDAfterMD5:(NSString *)friendID;
+
 @end

@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "FDManifestReader.h"
 #import "FDMMReader.h"
+#import "FDWeChatConfig.h"
 
 
 @implementation ViewController
@@ -20,6 +21,7 @@
     
     FDMMReader *mmReader = [[FDMMReader alloc] init];
     mmReader.databasePath = manifestReader.MMDotSqlitePath;
+    mmReader.friendID = @"";
     [mmReader query];
 }
 
