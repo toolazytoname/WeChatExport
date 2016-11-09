@@ -32,7 +32,9 @@
     self.sandboxPath = [self sandboxPathWithType:self.messageType mesLocalID:self.mesLocalID];
     self.isMe = [self isMe:self.des];
     self.aboulutePath = [self absolutePathBySandboxPath:self.sandboxPath];
+    self.destinationPath = [self destinationPathWithSandboxPath:self.sandboxPath friendID:self.friendID];
     self.messageTypeContent = [self messageTypeContentWithType:self.messageType];
+    
     
     return self;
 }
@@ -45,7 +47,11 @@
     return dateString;
 }
 
-- (NSString *)destinationPathWithSandboxPath:(NSString *)sandboxPath friendIDAfterMD5:(NSString *)friendIDAfterMD5 {
+- (NSString *)destinationPathWithSandboxPath:(NSString *)sandboxPath friendID:(NSString *)friendID {
+    if(!sandboxPath || 0 == sandboxPath.length) {
+        return nil;
+    }
+    NSString *friendIDAfterMD5 = [FDWeChatConfig friendIDAfterMD5:friendID];
     NSString *destination = [[NSString alloc] initWithFormat:@"%@/%@/%@",FDDestinationFolderPath,friendIDAfterMD5,sandboxPath];
     return destination;
 }
@@ -83,6 +89,9 @@
 }
 
 - (NSString *)absolutePathBySandboxPath:(NSString *)sandboxPath {
+    if(!sandboxPath || 0 == sandboxPath.length) {
+        return nil;
+    }
     NSString *idPath = [FDWeChatConfig hostWeChatFilesArrayFilePath];
     NSArray *idArray = [[NSArray alloc] initWithContentsOfFile:idPath];
     __block NSString *result = nil;;
@@ -98,8 +107,10 @@
 }
 
 - (NSString *)messageTypeContentWithType:(FDMessageType)type {
-    NSString *messageTypeContent = nil;
+    NSString *messageTypeContent = @"un enumated type";
     switch (type) {
+        case FDMessageTypeMessage:
+            messageTypeContent = @"文字";
         case FDMessageTypeImage:
             messageTypeContent = @"图片";
             break;
@@ -126,7 +137,6 @@
             break;
         case FDMessageTypePhone:
             messageTypeContent = @"电话";
-            break;
             break;
         default:
             break;

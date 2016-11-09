@@ -11,6 +11,9 @@
 @implementation FDFileManager
 
 + (BOOL)copyFileFrom:(NSString *)sourcepath destination:(NSString *)destinationPath iSCreate:(BOOL)iSCreate {
+    if(!sourcepath || 0 == sourcepath.length || !destinationPath || 0 == destinationPath.length){
+        return NO;
+    }
     NSError *error;
     NSFileManager *fileManager = [NSFileManager defaultManager];
     BOOL isDir = FALSE;

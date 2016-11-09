@@ -25,6 +25,9 @@ static sqlite3 *database = NULL;
         result = [self queryDataWithsql:sql dataColumns:dataColumns];
         [self closeDatabase];
     }
+    else{
+        NSLog(@"CurrentPath:%@ is not Exists",self.databasePath);
+    }
     return result;
 }
 

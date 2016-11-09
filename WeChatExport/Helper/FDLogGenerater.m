@@ -16,17 +16,17 @@
     [chatLog appendString:@"@"];
     [chatLog appendString:messageModel.createTimeString];
     if (messageModel.isMe) {
-        [chatLog appendString:@" I send a"];
+        [chatLog appendString:@" I send a "];
     }
     else {
-        [chatLog appendString:@" other sends a"];
+        [chatLog appendString:@" other sends a "];
     }
     [chatLog appendString:messageModel.messageTypeContent];
     [chatLog appendString:@"."];
     
     NSString *content = [NSString stringWithFormat:@"content is %@\n",messageModel.message];
-    if (messageModel.aboulutePath) {
-        content = [NSString stringWithFormat:@"resource path is %@\n",messageModel.message];
+    if (messageModel.sandboxPath) {
+        content = [NSString stringWithFormat:@"resource path is %@\n",messageModel.sandboxPath];
     }
     [chatLog appendString:content];
     return chatLog;
@@ -37,9 +37,8 @@
 //    NSString *textLog = [[self class] textLogFrom:messageModel];
 //    htmlContent
 //    
-//    
-    
-    
+//
+    return nil;
 }
 
 @end

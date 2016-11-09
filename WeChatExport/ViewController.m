@@ -16,15 +16,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];    
+    
+}
+
+- (IBAction)outputClick:(id)sender {
     FDManifestReader *manifestReader = [[FDManifestReader alloc] init];
+    manifestReader.databasePath = [FDWeChatConfig manifestPath];
     [manifestReader query];
     
     FDMMReader *mmReader = [[FDMMReader alloc] init];
     mmReader.databasePath = manifestReader.MMDotSqlitePath;
+    //TODO:ID
     mmReader.friendID = @"";
     [mmReader query];
 }
-
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];

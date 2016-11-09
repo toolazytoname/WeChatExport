@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4414FC181DD32C7D009B0265 /* FDLogGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC171DD32C7D009B0265 /* FDLogGenerater.m */; };
 		4414FC221DD3515D009B0265 /* FDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC1B1DD3515D009B0265 /* FDFileManager.m */; };
 		4414FC231DD3515D009B0265 /* FDWeChatConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC1D1DD3515D009B0265 /* FDWeChatConfig.m */; };
 		4414FC241DD3515D009B0265 /* NSData+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC1F1DD3515D009B0265 /* NSData+FDMD5.m */; };
 		4414FC251DD3515D009B0265 /* NSString+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC211DD3515D009B0265 /* NSString+FDMD5.m */; };
+		444B905B1DD363190062ED1B /* FDLogGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = 444B905A1DD363190062ED1B /* FDLogGenerater.m */; };
 		4472DB271DCF179300E479CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB261DCF179300E479CE /* AppDelegate.m */; };
 		4472DB2A1DCF179300E479CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB291DCF179300E479CE /* main.m */; };
 		4472DB2D1DCF179300E479CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB2C1DCF179300E479CE /* ViewController.m */; };
@@ -43,8 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		4414FC161DD32C7D009B0265 /* FDLogGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDLogGenerater.h; sourceTree = "<group>"; };
-		4414FC171DD32C7D009B0265 /* FDLogGenerater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDLogGenerater.m; sourceTree = "<group>"; };
 		4414FC1A1DD3515D009B0265 /* FDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFileManager.h; sourceTree = "<group>"; };
 		4414FC1B1DD3515D009B0265 /* FDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFileManager.m; sourceTree = "<group>"; };
 		4414FC1C1DD3515D009B0265 /* FDWeChatConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDWeChatConfig.h; sourceTree = "<group>"; };
@@ -53,6 +51,8 @@
 		4414FC1F1DD3515D009B0265 /* NSData+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FDMD5.m"; sourceTree = "<group>"; };
 		4414FC201DD3515D009B0265 /* NSString+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FDMD5.h"; sourceTree = "<group>"; };
 		4414FC211DD3515D009B0265 /* NSString+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FDMD5.m"; sourceTree = "<group>"; };
+		444B90591DD363190062ED1B /* FDLogGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDLogGenerater.h; sourceTree = "<group>"; };
+		444B905A1DD363190062ED1B /* FDLogGenerater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDLogGenerater.m; sourceTree = "<group>"; };
 		4472DB221DCF179300E479CE /* WeChatExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472DB251DCF179300E479CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4472DB261DCF179300E479CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -114,6 +114,8 @@
 				4414FC1F1DD3515D009B0265 /* NSData+FDMD5.m */,
 				4414FC201DD3515D009B0265 /* NSString+FDMD5.h */,
 				4414FC211DD3515D009B0265 /* NSString+FDMD5.m */,
+				444B90591DD363190062ED1B /* FDLogGenerater.h */,
+				444B905A1DD363190062ED1B /* FDLogGenerater.m */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -192,8 +194,6 @@
 				447B1B111DD0E5E900385375 /* FDMMReader.m */,
 				448B19BE1DD327F000737DD7 /* FDMessageModel.h */,
 				448B19BF1DD327F000737DD7 /* FDMessageModel.m */,
-				4414FC161DD32C7D009B0265 /* FDLogGenerater.h */,
-				4414FC171DD32C7D009B0265 /* FDLogGenerater.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -340,9 +340,9 @@
 				447B1B031DD0B6B400385375 /* FDManifestReader.m in Sources */,
 				4414FC231DD3515D009B0265 /* FDWeChatConfig.m in Sources */,
 				4472DB271DCF179300E479CE /* AppDelegate.m in Sources */,
+				444B905B1DD363190062ED1B /* FDLogGenerater.m in Sources */,
 				448B19C01DD327F000737DD7 /* FDMessageModel.m in Sources */,
 				447B1B121DD0E5E900385375 /* FDMMReader.m in Sources */,
-				4414FC181DD32C7D009B0265 /* FDLogGenerater.m in Sources */,
 				4414FC221DD3515D009B0265 /* FDFileManager.m in Sources */,
 				447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */,
 			);
