@@ -32,4 +32,14 @@
     return chatLog;
 }
 
++ (NSString *)htmlFormatFrom:(FDMessageModel *)messageModel {
+//    NSMutableString *htmlContent = [nsmutable ]@"<div>";
+//    NSString *textLog = [[self class] textLogFrom:messageModel];
+//    htmlContent
+//    
+//    
+    
+    
+}
+
 @end

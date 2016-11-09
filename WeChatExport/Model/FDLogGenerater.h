@@ -10,5 +10,8 @@
 #import "FDMessageModel.h"
 
 @interface FDLogGenerater : NSObject
+
 + (NSString *)textLogFrom:(FDMessageModel *)messageModel;
+
++ (NSString *)htmlFormatFrom:(FDMessageModel *)messageModel;
 @end
