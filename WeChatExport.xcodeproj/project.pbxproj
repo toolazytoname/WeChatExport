@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		4414FC181DD32C7D009B0265 /* FDLogGenerater.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC171DD32C7D009B0265 /* FDLogGenerater.m */; };
+		4414FC221DD3515D009B0265 /* FDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC1B1DD3515D009B0265 /* FDFileManager.m */; };
+		4414FC231DD3515D009B0265 /* FDWeChatConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC1D1DD3515D009B0265 /* FDWeChatConfig.m */; };
+		4414FC241DD3515D009B0265 /* NSData+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC1F1DD3515D009B0265 /* NSData+FDMD5.m */; };
+		4414FC251DD3515D009B0265 /* NSString+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 4414FC211DD3515D009B0265 /* NSString+FDMD5.m */; };
 		4472DB271DCF179300E479CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB261DCF179300E479CE /* AppDelegate.m */; };
 		4472DB2A1DCF179300E479CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB291DCF179300E479CE /* main.m */; };
 		4472DB2D1DCF179300E479CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB2C1DCF179300E479CE /* ViewController.m */; };
@@ -16,12 +20,8 @@
 		4472DB3D1DCF179400E479CE /* WeChatExportTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB3C1DCF179400E479CE /* WeChatExportTests.m */; };
 		4472DB481DCF179400E479CE /* WeChatExportUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4472DB471DCF179400E479CE /* WeChatExportUITests.m */; };
 		447B1B031DD0B6B400385375 /* FDManifestReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B001DD0B6B400385375 /* FDManifestReader.m */; };
-		447B1B061DD0B70F00385375 /* NSString+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B051DD0B70F00385375 /* NSString+FDMD5.m */; };
-		447B1B0C1DD0B7B300385375 /* NSData+FDMD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */; };
 		447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0E1DD0B99400385375 /* FDDataReader.m */; };
 		447B1B121DD0E5E900385375 /* FDMMReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B111DD0E5E900385375 /* FDMMReader.m */; };
-		448B19BA1DD2FEBF00737DD7 /* FDWeChatConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 448B19B91DD2FEBF00737DD7 /* FDWeChatConfig.m */; };
-		448B19BD1DD3010100737DD7 /* FDFileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 448B19BC1DD3010100737DD7 /* FDFileManager.m */; };
 		448B19C01DD327F000737DD7 /* FDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448B19BF1DD327F000737DD7 /* FDMessageModel.m */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +45,14 @@
 /* Begin PBXFileReference section */
 		4414FC161DD32C7D009B0265 /* FDLogGenerater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDLogGenerater.h; sourceTree = "<group>"; };
 		4414FC171DD32C7D009B0265 /* FDLogGenerater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDLogGenerater.m; sourceTree = "<group>"; };
+		4414FC1A1DD3515D009B0265 /* FDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFileManager.h; sourceTree = "<group>"; };
+		4414FC1B1DD3515D009B0265 /* FDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFileManager.m; sourceTree = "<group>"; };
+		4414FC1C1DD3515D009B0265 /* FDWeChatConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDWeChatConfig.h; sourceTree = "<group>"; };
+		4414FC1D1DD3515D009B0265 /* FDWeChatConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDWeChatConfig.m; sourceTree = "<group>"; };
+		4414FC1E1DD3515D009B0265 /* NSData+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FDMD5.h"; sourceTree = "<group>"; };
+		4414FC1F1DD3515D009B0265 /* NSData+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FDMD5.m"; sourceTree = "<group>"; };
+		4414FC201DD3515D009B0265 /* NSString+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FDMD5.h"; sourceTree = "<group>"; };
+		4414FC211DD3515D009B0265 /* NSString+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FDMD5.m"; sourceTree = "<group>"; };
 		4472DB221DCF179300E479CE /* WeChatExport.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeChatExport.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4472DB251DCF179300E479CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		4472DB261DCF179300E479CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -62,18 +70,10 @@
 		4472DB491DCF179400E479CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		447B1AFF1DD0B6B400385375 /* FDManifestReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDManifestReader.h; sourceTree = "<group>"; };
 		447B1B001DD0B6B400385375 /* FDManifestReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDManifestReader.m; sourceTree = "<group>"; };
-		447B1B041DD0B70F00385375 /* NSString+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+FDMD5.h"; sourceTree = "<group>"; };
-		447B1B051DD0B70F00385375 /* NSString+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+FDMD5.m"; sourceTree = "<group>"; };
-		447B1B0A1DD0B7B300385375 /* NSData+FDMD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+FDMD5.h"; sourceTree = "<group>"; };
-		447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+FDMD5.m"; sourceTree = "<group>"; };
 		447B1B0D1DD0B99400385375 /* FDDataReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDDataReader.h; sourceTree = "<group>"; };
 		447B1B0E1DD0B99400385375 /* FDDataReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDDataReader.m; sourceTree = "<group>"; };
 		447B1B101DD0E5E900385375 /* FDMMReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDMMReader.h; sourceTree = "<group>"; };
 		447B1B111DD0E5E900385375 /* FDMMReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDMMReader.m; sourceTree = "<group>"; };
-		448B19B81DD2FEBF00737DD7 /* FDWeChatConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDWeChatConfig.h; sourceTree = "<group>"; };
-		448B19B91DD2FEBF00737DD7 /* FDWeChatConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDWeChatConfig.m; sourceTree = "<group>"; };
-		448B19BB1DD3010100737DD7 /* FDFileManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDFileManager.h; sourceTree = "<group>"; };
-		448B19BC1DD3010100737DD7 /* FDFileManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDFileManager.m; sourceTree = "<group>"; };
 		448B19BE1DD327F000737DD7 /* FDMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDMessageModel.h; sourceTree = "<group>"; };
 		448B19BF1DD327F000737DD7 /* FDMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDMessageModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,6 +103,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4414FC191DD3515D009B0265 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				4414FC1A1DD3515D009B0265 /* FDFileManager.h */,
+				4414FC1B1DD3515D009B0265 /* FDFileManager.m */,
+				4414FC1C1DD3515D009B0265 /* FDWeChatConfig.h */,
+				4414FC1D1DD3515D009B0265 /* FDWeChatConfig.m */,
+				4414FC1E1DD3515D009B0265 /* NSData+FDMD5.h */,
+				4414FC1F1DD3515D009B0265 /* NSData+FDMD5.m */,
+				4414FC201DD3515D009B0265 /* NSString+FDMD5.h */,
+				4414FC211DD3515D009B0265 /* NSString+FDMD5.m */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		4472DB191DCF179300E479CE = {
 			isa = PBXGroup;
 			children = (
@@ -126,14 +141,10 @@
 		4472DB241DCF179300E479CE /* WeChatExport */ = {
 			isa = PBXGroup;
 			children = (
-				447B1AF91DD0B6B400385375 /* md5 */,
+				4414FC191DD3515D009B0265 /* Helper */,
 				447B1AFE1DD0B6B400385375 /* Model */,
 				4472DB251DCF179300E479CE /* AppDelegate.h */,
 				4472DB261DCF179300E479CE /* AppDelegate.m */,
-				448B19B81DD2FEBF00737DD7 /* FDWeChatConfig.h */,
-				448B19B91DD2FEBF00737DD7 /* FDWeChatConfig.m */,
-				448B19BB1DD3010100737DD7 /* FDFileManager.h */,
-				448B19BC1DD3010100737DD7 /* FDFileManager.m */,
 				4472DB2B1DCF179300E479CE /* ViewController.h */,
 				4472DB2C1DCF179300E479CE /* ViewController.m */,
 				4472DB2E1DCF179300E479CE /* Assets.xcassets */,
@@ -168,17 +179,6 @@
 				4472DB491DCF179400E479CE /* Info.plist */,
 			);
 			path = WeChatExportUITests;
-			sourceTree = "<group>";
-		};
-		447B1AF91DD0B6B400385375 /* md5 */ = {
-			isa = PBXGroup;
-			children = (
-				447B1B0A1DD0B7B300385375 /* NSData+FDMD5.h */,
-				447B1B0B1DD0B7B300385375 /* NSData+FDMD5.m */,
-				447B1B041DD0B70F00385375 /* NSString+FDMD5.h */,
-				447B1B051DD0B70F00385375 /* NSString+FDMD5.m */,
-			);
-			path = md5;
 			sourceTree = "<group>";
 		};
 		447B1AFE1DD0B6B400385375 /* Model */ = {
@@ -335,16 +335,16 @@
 			files = (
 				4472DB2D1DCF179300E479CE /* ViewController.m in Sources */,
 				4472DB2A1DCF179300E479CE /* main.m in Sources */,
+				4414FC251DD3515D009B0265 /* NSString+FDMD5.m in Sources */,
+				4414FC241DD3515D009B0265 /* NSData+FDMD5.m in Sources */,
 				447B1B031DD0B6B400385375 /* FDManifestReader.m in Sources */,
+				4414FC231DD3515D009B0265 /* FDWeChatConfig.m in Sources */,
 				4472DB271DCF179300E479CE /* AppDelegate.m in Sources */,
-				447B1B061DD0B70F00385375 /* NSString+FDMD5.m in Sources */,
 				448B19C01DD327F000737DD7 /* FDMessageModel.m in Sources */,
-				447B1B0C1DD0B7B300385375 /* NSData+FDMD5.m in Sources */,
 				447B1B121DD0E5E900385375 /* FDMMReader.m in Sources */,
 				4414FC181DD32C7D009B0265 /* FDLogGenerater.m in Sources */,
-				448B19BA1DD2FEBF00737DD7 /* FDWeChatConfig.m in Sources */,
+				4414FC221DD3515D009B0265 /* FDFileManager.m in Sources */,
 				447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */,
-				448B19BD1DD3010100737DD7 /* FDFileManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
