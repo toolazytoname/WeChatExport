@@ -27,7 +27,7 @@
     FDMMReader *mmReader = [[FDMMReader alloc] init];
     mmReader.databasePath = manifestReader.MMDotSqlitePath;
     //TODO:ID
-    mmReader.friendID = @"";
+    mmReader.friendID = @"jenny";
     [mmReader query];
 }
 

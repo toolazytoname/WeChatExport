@@ -111,6 +111,7 @@
     switch (type) {
         case FDMessageTypeMessage:
             messageTypeContent = @"文字";
+            break;
         case FDMessageTypeImage:
             messageTypeContent = @"图片";
             break;

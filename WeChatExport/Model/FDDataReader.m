@@ -77,8 +77,7 @@ static sqlite3 *database = NULL;
     }
     else
     {
-        NSLog(@"Problem with database:");
-        NSLog(@"%d",sqlResult);
+        NSLog(@"Problem with database:%d",sqlResult);
     }
     return mutableResult;
    

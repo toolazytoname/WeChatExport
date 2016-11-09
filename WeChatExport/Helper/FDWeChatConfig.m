@@ -14,7 +14,7 @@ NSString *const FDManifestDataBaseName = @"Manifest.db";
 NSString *const FDMMDataBaseName = @"MM.sqlite";
 NSString *const FDMacBackupFolderPath = @"/Users/weichao/Library/Application Support/MobileSync/Backup/7c944decd417833ed3954f4cc32c0f0e0cf9c14a";
 //TODO:自己账号ID
-NSString *const FDHostWeChatID = @"";
+NSString *const FDHostWeChatID = @"shutaiyang747";
 NSString *const FDGetWeChatFileIDAndrelativePathSQL = @"SELECT fileID,relativePath FROM Files WHERE domain='AppDomain-com.tencent.xin'";
 
 @implementation FDWeChatConfig
@@ -81,7 +81,7 @@ NSString *const FDGetWeChatFileIDAndrelativePathSQL = @"SELECT fileID,relativePa
 
 + (NSString *)friendIDAfterMD5:(NSString *)friendID {
     //TODO:md5后的ID
-    NSString *friendIDAfterMD5 = @"";//[friendID fd_md5Hash];
+    NSString *friendIDAfterMD5 = @"b069ed0823fc2d57d25d37da69434ab1";//[friendID fd_md5Hash];
     return friendIDAfterMD5;
 }
 @end

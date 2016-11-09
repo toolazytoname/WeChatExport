@@ -15,12 +15,15 @@
     NSMutableString *chatLog = [[NSMutableString alloc] init];
     [chatLog appendString:@"@"];
     [chatLog appendString:messageModel.createTimeString];
+    NSString *who = nil;
     if (messageModel.isMe) {
-        [chatLog appendString:@" I send a "];
+        who = @"I";
     }
     else {
-        [chatLog appendString:@" other sends a "];
+        who = messageModel.friendID;
     }
+    [chatLog appendFormat:@" %@ send a ",who];
+    
     [chatLog appendString:messageModel.messageTypeContent];
     [chatLog appendString:@"."];
     
