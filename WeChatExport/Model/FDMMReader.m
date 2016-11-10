@@ -10,6 +10,7 @@
 #import "FDMessageModel.h"
 #import "FDLogGenerater.h"
 #import "FDFileManager.h"
+#import "FDAudConverter.h"
 
 @implementation FDMMReader
 - (void)query {
@@ -21,6 +22,9 @@
         [filesArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             FDMessageModel *messageModel = [[FDMessageModel alloc] initWithModel:obj friendID:self.friendID];
             [FDFileManager copyFileFrom:messageModel.aboulutePath destination:messageModel.destinationPath iSCreate:YES];
+            if (FDMessageTypeAudio == messageModel.messageType && messageModel.destinationPath) {
+                [FDAudConverter convertAudToAMRWithPath:messageModel.destinationPath];
+            }
             NSString * objLog = [FDLogGenerater textLogFrom:messageModel];
             [chatLog appendString:objLog];
         }];

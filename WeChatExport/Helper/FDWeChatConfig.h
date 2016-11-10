@@ -37,6 +37,11 @@ extern NSString *const FDHostWeChatID;
  */
 extern NSString *const FDGetWeChatFileIDAndrelativePathSQL;
 
+/**
+ *  AMR文件的头信息
+ */
+extern NSString *const FDAMRHeader;
+
 @interface FDWeChatConfig : NSObject
 
 /**

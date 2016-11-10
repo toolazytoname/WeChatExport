@@ -16,6 +16,7 @@ NSString *const FDMacBackupFolderPath = @"/Users/weichao/Library/Application Sup
 //TODO:自己账号ID
 NSString *const FDHostWeChatID = @"shutaiyang747";
 NSString *const FDGetWeChatFileIDAndrelativePathSQL = @"SELECT fileID,relativePath FROM Files WHERE domain='AppDomain-com.tencent.xin'";
+NSString *const FDAMRHeader = @"#!AMR";
 
 @implementation FDWeChatConfig
 
