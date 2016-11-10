@@ -49,7 +49,7 @@
             case FDMessageTypeImage:{
                 resourceContent = [NSMutableString stringWithFormat:
                                    @"<a href='%@'>"
-                                   "<img src='%@' width='20' height='20'/>"
+                                   "<img src='%@' width='320' />"
                                    "</a>",
                                    messageModel.destinationPath,messageModel.destinationPath];
                 break;

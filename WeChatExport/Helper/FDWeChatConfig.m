@@ -14,7 +14,7 @@ NSString *const FDManifestDataBaseName = @"Manifest.db";
 NSString *const FDMMDataBaseName = @"MM.sqlite";
 NSString *const FDMacBackupFolderPath = @"/Users/weichao/Library/Application Support/MobileSync/Backup/7c944decd417833ed3954f4cc32c0f0e0cf9c14a";
 //TODO:自己账号ID
-NSString *const FDHostWeChatID = @"shutaiyang747";
+NSString *const FDHostWeChatID = @"shuitaiyang747";
 NSString *const FDGetWeChatFileIDAndrelativePathSQL = @"SELECT fileID,relativePath FROM Files WHERE domain='AppDomain-com.tencent.xin'";
 NSString *const FDAMRHeader = @"#!AMR";
 
