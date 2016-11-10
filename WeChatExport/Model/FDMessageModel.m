@@ -35,6 +35,7 @@
     self.destinationPath = [self destinationPathWithSandboxPath:self.sandboxPath friendID:self.friendID];
     self.messageTypeContent = [self messageTypeContentWithType:self.messageType];
     self.destinationPathForAmr = [self amrPathWithAudPath:self.destinationPath];
+    self.relativePathToHtml = [self relativePathToHtmlWithWithSandboxPath:self.sandboxPath friendID:self.friendID];
     return self;
 }
 
@@ -44,6 +45,14 @@
     dateFormatter.dateFormat = @"yyyy-MM-dd HH:mm:ssz";
     NSString *dateString = [dateFormatter stringFromDate:date];
     return dateString;
+}
+- (NSString *)relativePathToHtmlWithWithSandboxPath:(NSString *)sandboxPath friendID:(NSString *)friendID {
+    if(!sandboxPath || 0 == sandboxPath.length) {
+        return nil;
+    }
+    NSString *friendIDAfterMD5 = [FDWeChatConfig friendIDAfterMD5:friendID];
+    NSString *relativePathToHtml = [[NSString alloc] initWithFormat:@"%@/%@",friendIDAfterMD5,sandboxPath];
+    return relativePathToHtml;
 }
 
 - (NSString *)destinationPathWithSandboxPath:(NSString *)sandboxPath friendID:(NSString *)friendID {

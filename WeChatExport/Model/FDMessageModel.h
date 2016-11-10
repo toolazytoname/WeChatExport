@@ -52,6 +52,7 @@ typedef NS_ENUM(NSInteger, FDMessageType) {
 @property (nonatomic, copy)   NSString *aboulutePath;
 @property (nonatomic, copy)   NSString *destinationPath;
 @property (nonatomic, copy)   NSString *destinationPathForAmr;
+@property (nonatomic, copy)   NSString *relativePathToHtml;
 @property (nonatomic, copy)   NSString *friendID;
 @property (nonatomic, copy)   NSString *friendIDAfterMD5;
 @property (nonatomic, assign) BOOL isMe;

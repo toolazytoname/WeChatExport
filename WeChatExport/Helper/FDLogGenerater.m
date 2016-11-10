@@ -51,7 +51,7 @@
                                    @"<a href='%@'>"
                                    "<img src='%@' width='320' />"
                                    "</a>",
-                                   messageModel.destinationPath,messageModel.destinationPath];
+                                   messageModel.relativePathToHtml,messageModel.relativePathToHtml];
                 break;
             }
             case FDMessageTypeAudio:
@@ -65,7 +65,7 @@
                                    @"<video width='320' height='240' controls>"
                                    "<source src='%@' type='video/mp4'>"
                                    "Your browser does not support the video tag."
-                                   "</video>",messageModel.destinationPath];
+                                   "</video>",messageModel.relativePathToHtml];
                 break;
             default:
                 break;
