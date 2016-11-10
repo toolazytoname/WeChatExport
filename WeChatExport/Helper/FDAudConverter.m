@@ -63,4 +63,14 @@
     system(shell.UTF8String);
 }
 
+
+- (void)shellConvertARMToMP3:(NSString *)amrPath {
+    if (!amrPath  || 0 == amrPath.length) {
+        return;
+    }
+    NSString *mp3Path = [amrPath.stringByDeletingPathExtension stringByAppendingPathExtension:@"amr"];
+    NSString *shell = [NSString stringWithFormat:@""];
+    
+//    afconvert -d '.mp3' -f 'MPG3' /Users/weichao/Desktop/lazyTemp/3.amr /Users/weichao/Desktop/lazyTemp/3lazy.mp3
+}
 @end

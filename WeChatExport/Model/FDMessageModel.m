@@ -34,8 +34,7 @@
     self.aboulutePath = [self absolutePathBySandboxPath:self.sandboxPath];
     self.destinationPath = [self destinationPathWithSandboxPath:self.sandboxPath friendID:self.friendID];
     self.messageTypeContent = [self messageTypeContentWithType:self.messageType];
-    
-    
+    self.destinationPathForAmr = [self amrPathWithAudPath:self.destinationPath];
     return self;
 }
 
@@ -54,6 +53,13 @@
     NSString *friendIDAfterMD5 = [FDWeChatConfig friendIDAfterMD5:friendID];
     NSString *destination = [[NSString alloc] initWithFormat:@"%@/%@/%@",FDDestinationFolderPath,friendIDAfterMD5,sandboxPath];
     return destination;
+}
+- (NSString *)amrPathWithAudPath:(NSString *)audPath {
+    if (!audPath || 0 == audPath.length) {
+        return nil;
+    }
+    NSString *amrPath = [audPath.stringByDeletingPathExtension stringByAppendingPathExtension:@"amr"];
+    return amrPath;
 }
 
 - (NSString *)sandboxPathWithType:(FDMessageType)type mesLocalID:(NSInteger)mesLocalID {

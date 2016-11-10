@@ -56,8 +56,8 @@
             }
             case FDMessageTypeAudio:
                 resourceContent = [NSMutableString stringWithFormat:
-                                   @"<a href='%@'>audio</a>",
-                                   messageModel.destinationPath];
+                                   @"<a href='%@'>audiopath:%@</a>"
+                                   ,messageModel.destinationPathForAmr,messageModel.destinationPathForAmr];
                 break;
             case FDMessageTypeVideo:
             case FDMessageTypeShortVideo:
@@ -80,6 +80,8 @@
     NSString *headerString =
     @"<html>"
     "<head>"
+    "<meta content='text/html; charset=utf-8' http-equiv='content-type'>"
+    "<title>日志查看(lazy出品)</title>"
     "</head>"
     
     "<body>";
