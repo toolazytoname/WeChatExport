@@ -10,12 +10,16 @@
 #import "FDManifestReader.h"
 #import "FDMMReader.h"
 #import "FDWeChatConfig.h"
+#import "FDAudConverter.h"
 
 
 @implementation ViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];    
+    [super viewDidLoad];
+    
+//    [FDAudConverter convertAudToAMRWithPath:@"/Users/weichao/Desktop/lazyTemp/3.aud"];
+//    [FDAudConverter shellConvertAudToAMRWithPath:@"/Users/weichao/Desktop/lazyTemp/3.aud"];
     
 }
 
