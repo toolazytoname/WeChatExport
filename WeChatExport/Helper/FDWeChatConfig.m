@@ -69,6 +69,11 @@ NSString *const FDAMRHeader = @"#!AMR";
     return path;
 }
 
++ (NSString *)friendHtmlChatLogPathWithFriendID:(NSString *)friendID {
+    NSString *path = [[FDDestinationFolderPath stringByAppendingPathComponent:friendID] stringByAppendingString:@"ChatLog.html"];
+    return path;
+}
+
 + (NSString *)friendSQLResultPathWithFriendID:(NSString *)friendID {
     NSString *path = [[FDDestinationFolderPath stringByAppendingPathComponent:friendID] stringByAppendingString:@"SQLResult"];
     return path;

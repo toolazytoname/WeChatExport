@@ -29,19 +29,66 @@
     
     NSString *content = [NSString stringWithFormat:@"content is %@\n",messageModel.message];
     if (messageModel.sandboxPath) {
-        content = [NSString stringWithFormat:@"resource path is %@\n",messageModel.sandboxPath];
+        content = [NSString stringWithFormat:@"resource path is %@\n",messageModel.destinationPath];
     }
     [chatLog appendString:content];
     return chatLog;
 }
 
+
 + (NSString *)htmlFormatFrom:(FDMessageModel *)messageModel {
-//    NSMutableString *htmlContent = [nsmutable ]@"<div>";
-//    NSString *textLog = [[self class] textLogFrom:messageModel];
-//    htmlContent
-//    
-//
-    return nil;
+    NSMutableString *htmlContent = [[NSMutableString alloc] initWithString:@"<div>"];
+    NSString *textLog = [[self class] textLogFrom:messageModel];
+    [htmlContent appendString:textLog];
+    [htmlContent appendString:@"</div>"];
+    
+    if (messageModel.destinationPath && 0 != messageModel.destinationPath.length) {
+        [htmlContent appendString:@"<div>"];
+        NSMutableString *resourceContent = nil;
+        switch (messageModel.messageType) {
+            case FDMessageTypeImage:{
+                resourceContent = [NSMutableString stringWithFormat:
+                                   @"<a href='%@'>"
+                                   "<img src='%@' width='20' height='20'/>"
+                                   "</a>",
+                                   messageModel.destinationPath,messageModel.destinationPath];
+                break;
+            }
+            case FDMessageTypeAudio:
+                resourceContent = [NSMutableString stringWithFormat:
+                                   @"<a href='%@'>audio</a>",
+                                   messageModel.destinationPath];
+                break;
+            case FDMessageTypeVideo:
+            case FDMessageTypeShortVideo:
+                resourceContent = [NSMutableString stringWithFormat:
+                                   @"<video width='320' height='240' controls>"
+                                   "<source src='%@' type='video/mp4'>"
+                                   "Your browser does not support the video tag."
+                                   "</video>",messageModel.destinationPath];
+                break;
+            default:
+                break;
+        }
+        [htmlContent appendString:resourceContent];
+        [htmlContent appendString:@"</div>"];
+    }
+    return htmlContent;
+}
+
++ (NSString *)addHeaderAndFooter:(NSMutableString *)middle {
+    NSString *headerString =
+    @"<html>"
+    "<head>"
+    "</head>"
+    
+    "<body>";
+    NSString *footer =
+    @"</body>"
+    "</html>";
+    
+    NSString *html = [NSString stringWithFormat:@"%@%@%@",headerString,middle,footer];
+    return html;
 }
 
 @end

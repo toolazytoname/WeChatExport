@@ -100,6 +100,14 @@ extern NSString *const FDAMRHeader;
  */
 + (NSString *)friendChatLogPathWithFriendID:(NSString *)friendID;
 
+/**
+ 返回聊天记录结果文件(html)
+ 
+ @param friendID 朋友明文ID
+ @return 朋友聊天记录导出的路径
+ */
++ (NSString *)friendHtmlChatLogPathWithFriendID:(NSString *)friendID;
+
 
 /**
  某个朋友消息表的sql查询结果路径

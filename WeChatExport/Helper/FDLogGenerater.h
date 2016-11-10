@@ -14,4 +14,6 @@
 + (NSString *)textLogFrom:(FDMessageModel *)messageModel;
 
 + (NSString *)htmlFormatFrom:(FDMessageModel *)messageModel;
+
++ (NSString *)addHeaderAndFooter:(NSMutableString *)middle;
 @end

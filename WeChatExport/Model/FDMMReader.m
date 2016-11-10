@@ -19,6 +19,7 @@
         NSMutableArray *filesArray = [self publicQueryDataWithsql:sql dataColumns:@[@(0),@(1),@(2),@(3),@(4)]];
         [filesArray writeToFile:[FDWeChatConfig friendSQLResultPathWithFriendID:self.friendID] atomically:YES];
         NSMutableString *chatLog = [[NSMutableString alloc] init];
+        NSMutableString *html = [[NSMutableString alloc] init];
         [filesArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             FDMessageModel *messageModel = [[FDMessageModel alloc] initWithModel:obj friendID:self.friendID];
             [FDFileManager copyFileFrom:messageModel.aboulutePath destination:messageModel.destinationPath iSCreate:YES];
@@ -27,9 +28,14 @@
             }
             NSString * objLog = [FDLogGenerater textLogFrom:messageModel];
             [chatLog appendString:objLog];
+            
+            [html appendString:[FDLogGenerater htmlFormatFrom:messageModel]];
         }];
         [chatLog writeToFile:[FDWeChatConfig friendChatLogPathWithFriendID:self.friendID] atomically:YES encoding:NSUTF8StringEncoding error:nil];
-    });
+        html = [NSMutableString stringWithString:[FDLogGenerater addHeaderAndFooter:html]];
+        [html writeToFile:[FDWeChatConfig friendHtmlChatLogPathWithFriendID:self.friendID] atomically:YES encoding:NSUTF8StringEncoding error:nil];
+        
+     });
     }
 
 @end
