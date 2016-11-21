@@ -73,4 +73,19 @@
     
 //    afconvert -d '.mp3' -f 'MPG3' /Users/weichao/Desktop/lazyTemp/3.amr /Users/weichao/Desktop/lazyTemp/3lazy.mp3
 }
+
+
+- (BOOL)isSilkFile:(NSString *)path {
+    if (!path || 0 == path.length) {
+        return NO;
+    }
+    NSError *fileContentError = nil;
+    NSStringEncoding encoding;
+    NSString *head = [NSString stringWithContentsOfFile:path usedEncoding:&encoding error:&fileContentError];
+    
+    NSString *silk_header = @"#!SILK_V3";
+//    head
+    
+    
+}
 @end
