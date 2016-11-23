@@ -35,7 +35,9 @@
     self.destinationPath = [self destinationPathWithSandboxPath:self.sandboxPath friendID:self.friendID];
     self.messageTypeContent = [self messageTypeContentWithType:self.messageType];
     self.destinationPathForAmr = [self amrPathWithAudPath:self.destinationPath];
+    self.destinationPathForWav = [self wavPathWithAudPath:self.destinationPath];
     self.relativePathToHtml = [self relativePathToHtmlWithWithSandboxPath:self.sandboxPath friendID:self.friendID];
+    self.relativeWAVPathToHtml = [self relativeWAVPathToHtmlWithWithSandboxPath:self.sandboxPath friendID:self.friendID];
     return self;
 }
 
@@ -55,6 +57,13 @@
     return relativePathToHtml;
 }
 
+- (NSString *)relativeWAVPathToHtmlWithWithSandboxPath:(NSString *)sandboxPath friendID:(NSString *)friendID {
+    NSString *path = [self relativePathToHtmlWithWithSandboxPath:sandboxPath friendID:friendID];
+    NSString *wavPath = [path.stringByDeletingPathExtension stringByAppendingPathExtension:@"wav"];
+    return wavPath;
+
+}
+
 - (NSString *)destinationPathWithSandboxPath:(NSString *)sandboxPath friendID:(NSString *)friendID {
     if(!sandboxPath || 0 == sandboxPath.length) {
         return nil;
@@ -70,6 +79,14 @@
     NSString *amrPath = [audPath.stringByDeletingPathExtension stringByAppendingPathExtension:@"amr"];
     return amrPath;
 }
+- (NSString *)wavPathWithAudPath:(NSString *)audPath {
+    if (!audPath || 0 == audPath.length) {
+        return nil;
+    }
+    NSString *amrPath = [audPath.stringByDeletingPathExtension stringByAppendingPathExtension:@"wav"];
+    return amrPath;
+}
+
 
 - (NSString *)sandboxPathWithType:(FDMessageType)type mesLocalID:(NSInteger)mesLocalID {
     NSString *sandboxPath = nil;

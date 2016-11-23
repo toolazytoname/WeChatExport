@@ -24,7 +24,8 @@
             FDMessageModel *messageModel = [[FDMessageModel alloc] initWithModel:obj friendID:self.friendID];
             [FDFileManager copyFileFrom:messageModel.aboulutePath destination:messageModel.destinationPath iSCreate:YES];
             if (FDMessageTypeAudio == messageModel.messageType && messageModel.destinationPath) {
-                [FDAudConverter shellConvertAudToAMRWithPath:messageModel.destinationPath];
+//                [FDAudConverter shellConvertAudToAMRWithPath:messageModel.destinationPath];
+                [FDAudConverter convert:messageModel.destinationPath];
             }
             NSString * objLog = [FDLogGenerater textLogFrom:messageModel];
             [chatLog appendString:objLog];

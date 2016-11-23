@@ -24,6 +24,9 @@
 		447B1B0F1DD0B99400385375 /* FDDataReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B0E1DD0B99400385375 /* FDDataReader.m */; };
 		447B1B121DD0E5E900385375 /* FDMMReader.m in Sources */ = {isa = PBXBuildFile; fileRef = 447B1B111DD0E5E900385375 /* FDMMReader.m */; };
 		448B19C01DD327F000737DD7 /* FDMessageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 448B19BF1DD327F000737DD7 /* FDMessageModel.m */; };
+		44ED4CF51DE592BA00E70969 /* converter.py in Resources */ = {isa = PBXBuildFile; fileRef = 44ED4CF21DE592BA00E70969 /* converter.py */; };
+		44ED4CF61DE592BA00E70969 /* decoder in Resources */ = {isa = PBXBuildFile; fileRef = 44ED4CF31DE592BA00E70969 /* decoder */; };
+		44ED4CF71DE592BA00E70969 /* libSKP_SILK_SDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44ED4CF41DE592BA00E70969 /* libSKP_SILK_SDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,13 @@
 		447B1B111DD0E5E900385375 /* FDMMReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDMMReader.m; sourceTree = "<group>"; };
 		448B19BE1DD327F000737DD7 /* FDMessageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDMessageModel.h; sourceTree = "<group>"; };
 		448B19BF1DD327F000737DD7 /* FDMessageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDMessageModel.m; sourceTree = "<group>"; };
+		44ED4CF21DE592BA00E70969 /* converter.py */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.python; path = converter.py; sourceTree = "<group>"; };
+		44ED4CF31DE592BA00E70969 /* decoder */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = decoder; sourceTree = "<group>"; };
+		44ED4CF41DE592BA00E70969 /* libSKP_SILK_SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libSKP_SILK_SDK.a; sourceTree = "<group>"; };
+		44ED4CF91DE5A14900E70969 /* SKP_Silk_control.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_control.h; sourceTree = "<group>"; };
+		44ED4CFA1DE5A14900E70969 /* SKP_Silk_errors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_errors.h; sourceTree = "<group>"; };
+		44ED4CFB1DE5A14900E70969 /* SKP_Silk_SDK_API.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_SDK_API.h; sourceTree = "<group>"; };
+		44ED4CFC1DE5A14900E70969 /* SKP_Silk_typedef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SKP_Silk_typedef.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				44ED4CF71DE592BA00E70969 /* libSKP_SILK_SDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +159,7 @@
 		4472DB241DCF179300E479CE /* WeChatExport */ = {
 			isa = PBXGroup;
 			children = (
+				44ED4CF11DE592BA00E70969 /* decoder */,
 				4414FC191DD3515D009B0265 /* Helper */,
 				447B1AFE1DD0B6B400385375 /* Model */,
 				4472DB251DCF179300E479CE /* AppDelegate.h */,
@@ -201,6 +213,28 @@
 				448B19BF1DD327F000737DD7 /* FDMessageModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		44ED4CF11DE592BA00E70969 /* decoder */ = {
+			isa = PBXGroup;
+			children = (
+				44ED4CF81DE5A14900E70969 /* interface */,
+				44ED4CF21DE592BA00E70969 /* converter.py */,
+				44ED4CF31DE592BA00E70969 /* decoder */,
+				44ED4CF41DE592BA00E70969 /* libSKP_SILK_SDK.a */,
+			);
+			path = decoder;
+			sourceTree = "<group>";
+		};
+		44ED4CF81DE5A14900E70969 /* interface */ = {
+			isa = PBXGroup;
+			children = (
+				44ED4CF91DE5A14900E70969 /* SKP_Silk_control.h */,
+				44ED4CFA1DE5A14900E70969 /* SKP_Silk_errors.h */,
+				44ED4CFB1DE5A14900E70969 /* SKP_Silk_SDK_API.h */,
+				44ED4CFC1DE5A14900E70969 /* SKP_Silk_typedef.h */,
+			);
+			path = interface;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +347,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4472DB2F1DCF179300E479CE /* Assets.xcassets in Resources */,
+				44ED4CF61DE592BA00E70969 /* decoder in Resources */,
+				44ED4CF51DE592BA00E70969 /* converter.py in Resources */,
 				4472DB321DCF179400E479CE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +528,10 @@
 				DEVELOPMENT_TEAM = 4K59R3N96P;
 				INFOPLIST_FILE = WeChatExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeChatExport/decoder",
+				);
 				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_BUNDLE_IDENTIFIER = FG.WeChatExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -506,6 +546,10 @@
 				DEVELOPMENT_TEAM = 4K59R3N96P;
 				INFOPLIST_FILE = WeChatExport/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/WeChatExport/decoder",
+				);
 				OTHER_LDFLAGS = "-lsqlite3";
 				PRODUCT_BUNDLE_IDENTIFIER = FG.WeChatExport;
 				PRODUCT_NAME = "$(TARGET_NAME)";

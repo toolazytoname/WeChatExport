@@ -12,4 +12,5 @@
 @interface FDAudConverter : NSObject
 + (BOOL)convertAudToAMRWithPath:(NSString *)audPath;
 + (void)shellConvertAudToAMRWithPath:(NSString *)audPath;
++ (void)convert:(NSString *)path;
 @end
